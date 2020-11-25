@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringBootSpringDataApplication  {
     
 	public static void main(String[] args) {
+		System.out.println("In main()");
 		SpringApplication.run(SpringBootSpringDataApplication.class, args);
 	}
 
