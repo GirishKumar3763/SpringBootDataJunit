@@ -14,7 +14,7 @@ public class SpringBootSpringDataApplication extends SpringBootServletInitialize
 	 }
     
 	public static void main(String[] args) {
-		
+		System.out.println("testing");
 		SpringApplication.run(SpringBootSpringDataApplication.class, args);
 	}
 
