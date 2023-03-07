@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stage('Build') {
+        stage('Build Project') {
             steps {
                 sh 'mvn clean install'
             }
@@ -21,6 +21,13 @@ pipeline {
         stage('Unit Testing') {
             steps {
                 sh 'mvn test'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                script{
+                    sh 'docker build -t girishkumar007/dockerwithjenkins-Integration:1.0  .'
             }
         }
         
