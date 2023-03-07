@@ -28,6 +28,7 @@ pipeline {
             steps {
                 script{
                     sh 'docker build -t girishkumar007/dockerwithjenkins-Integration:1.0  .'
+                }    
             }
         }
             
@@ -35,6 +36,7 @@ pipeline {
             steps {
                 script{
                     sh 'docker build -t girishkumar007/dockerwithjenkins-Integration:1.0  .'
+                }
             }
         }    
         
