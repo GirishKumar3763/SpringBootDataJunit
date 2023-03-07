@@ -30,6 +30,13 @@ pipeline {
                     sh 'docker build -t girishkumar007/dockerwithjenkins-Integration:1.0  .'
             }
         }
+            
+        stage('Pushing Docker Image to Docker Hub') {
+            steps {
+                script{
+                    sh 'docker build -t girishkumar007/dockerwithjenkins-Integration:1.0  .'
+            }
+        }    
         
     }
 }
