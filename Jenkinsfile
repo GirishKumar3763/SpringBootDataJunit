@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        dockerhub-pwd = "dckr_pat_l_1AK7mMMifNEAr0ZPuuTe0mHNQ"
+        
+    }
     
     tools{ 
         maven 'Default'
@@ -35,13 +39,13 @@ pipeline {
         stage('Pushing Docker Image to Docker Hub') {
             steps {
                 script{
-                    withCredentials([string(credentialsId: 'dockerhub-pwd',variable:'dockerhub-pwd')]){
                     
-                    sh 'docker login -u girishkumar007 -p {dockerhub-pwd}'
+                    
+                    sh 'docker login -u girishkumar007 -p ${dockerhub-pwd}'
                     
                     sh 'docker push girishkumar007/dockerwithjenkins:1.0'      
                     
-                    }
+                    
                 }
             }
         }   
