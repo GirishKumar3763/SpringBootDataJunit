@@ -32,7 +32,19 @@ pipeline {
             }
         }
             
-        
+        stage('Pushing Docker Image to Docker Hub') {
+            steps {
+                script{
+                    withCredentials([string(credentialsId: 'dockerhub-pwd',variable:'dockerhubpwd')]){
+                    
+                    sh 'docker login -u girishkumar007 -p {dockerhubpwd}'
+                    
+                    sh 'docker push girishkumar007/dockerwithjenkins:1.0'
+                    
+                    }
+                }
+            }
+        }   
         
     }
 }
