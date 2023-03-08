@@ -1,9 +1,9 @@
 pipeline {
-    agent any
     environment {
-        dockerhub-pwd = "dckr_pat_l_1AK7mMMifNEAr0ZPuuTe0mHNQ"
+        dockerhubpwd = "dckr_pat_l_1AK7mMMifNEAr0ZPuuTe0mHNQ"
         
     }
+    agent any    
     
     tools{ 
         maven 'Default'
@@ -41,7 +41,7 @@ pipeline {
                 script{
                     
                     
-                    sh 'docker login -u girishkumar007 -p ${dockerhub-pwd}'
+                    sh 'docker login -u girishkumar007 -p ${dockerhubpwd}'
                     
                     sh 'docker push girishkumar007/dockerwithjenkins:1.0'      
                     
