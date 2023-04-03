@@ -26,7 +26,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script{
-                    dockerImage = docker.build ("JenkinsDockerWithAWSECR")
+                    dockerImage = docker.build ("jenkinsdockerwithawsecr")
                 }    
             }
         }
