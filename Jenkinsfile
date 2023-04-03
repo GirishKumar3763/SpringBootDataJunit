@@ -26,7 +26,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script{
-                    dockerImage = docker.build ("jenkinsdocker")
+                    dockerImage = docker.build ("JenkinsDockerWithAWSECR")
                 }    
             }
         }
@@ -36,7 +36,7 @@ pipeline {
                script {
                docker.withRegistry('https://670527263574.dkr.ecr.us-east-1.amazonaws.com  ','  ecr:us-east-1:AWS_CREDENTIALS_ID ') {
 	      dockerImage.push("$env.BUILD_NUMBER")
-               dockerImage.push('latest')	   
+              	   
 			   
 			   
 			   }
