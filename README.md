@@ -1,2 +1,2 @@
 # SpringBootDataJunit
-This version contains AWS RDS, Docker, GIT, Sprin Boot, Maven, Jenkins and Docker Hub
+This version contains MySQL Docker, GIT, SpringBoot, Maven, Jenkins and AWS ECR
