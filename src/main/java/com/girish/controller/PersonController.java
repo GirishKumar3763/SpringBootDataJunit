@@ -46,9 +46,10 @@ public class PersonController {
 		return personService.addPerson(person) ? HttpStatus.CREATED : HttpStatus.BAD_REQUEST;
 	}
 
-	@RequestMapping(value = "/updateperson", method = RequestMethod.PUT)
-	public HttpStatus updatePerson(@RequestBody Person person) {
-		return personService.updatePerson(person) ? HttpStatus.ACCEPTED : HttpStatus.BAD_REQUEST;
+	@RequestMapping(value = "/updateperson/{id}", method = RequestMethod.PUT)
+	public HttpStatus updatePerson(@PathVariable int id,@RequestBody Person person) {
+		
+		return personService.updatePerson(id,person) ? HttpStatus.ACCEPTED : HttpStatus.BAD_REQUEST;
 	}
 	
 	@RequestMapping(value = "/personbylastnameandagedesc/{name}", method = RequestMethod.GET)
