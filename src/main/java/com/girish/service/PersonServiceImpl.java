@@ -43,9 +43,21 @@ public class PersonServiceImpl implements PersonService {
 	}
 
 	
-	public boolean updatePerson(Person person) {
-		return personRepository.save(person) != null;
+		public boolean updatePerson(int id,Person person) {
+		Optional<Person> persons = personRepository.findById(id);
+		if(persons.isEmpty()) {
+			return false;
+		}
+		else {
+			Person udatedPerson=persons.get();
+			udatedPerson.setAge(person.getAge());
+			udatedPerson.setFirstName(person.getFirstName());
+			udatedPerson.setLastName(person.getLastName());
+			personRepository.save(udatedPerson);
+			return true;
+		}
 	}
+
 
 	public List<Person> findByLastNameOrderByAgeDesc(String lastName) {
 		// TODO Auto-generated method stub
