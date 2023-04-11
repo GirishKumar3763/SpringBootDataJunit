@@ -12,7 +12,7 @@ public interface PersonService {
 	public Optional<Person> getByPersonId(Integer id);
 	public void deletePerson(Integer personId);
 	public boolean addPerson(Person person);
-	public boolean updatePerson(Person person);
+	public boolean updatePerson(int id,Person person);
 	public List<Person> findByLastNameOrderByAgeDesc(String lastName);
 
 }
